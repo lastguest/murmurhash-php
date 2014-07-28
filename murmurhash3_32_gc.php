@@ -4,6 +4,7 @@
  * PHP Implementation of MurmurHash3
  *
  * @author Stefano Azzolini (lastguest@gmail.com)
+ * @see https://github.com/lastguest/murmurhash-php
  * @author Gary Court (gary.court@gmail.com)
  * @see http://github.com/garycourt/murmurhash-js
  * @author Austin Appleby (aappleby@gmail.com)
