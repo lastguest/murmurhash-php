@@ -5,6 +5,7 @@
     "keywords":      [ "hash","hashing", "murmur" ],
     "type":          "library",
     "license":       "MIT",
+    "version":       "1.0.0",
     "require": {
         "php": ">=4.3"
     },
@@ -15,6 +16,7 @@
             "homepage": "https://github.com/lastguest/murmurhash-php"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "files": [
         	"murmurhash3.php"
