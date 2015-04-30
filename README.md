@@ -1,4 +1,4 @@
-# MurmurHash.PHP
+# MurmurHash3
 
 PHP Implementation of MurmurHash3
 
@@ -8,6 +8,22 @@ More information about these algorithms can be found at:
 *	[Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash) 
 
 Porting of the MurmurHash3 JavaScript version created by Gary Court (https://github.com/garycourt/murmurhash-js)
+
+## Installation
+Use [composer](https://getcomposer.org/download/) :
+
+```bash
+composer require lastguest/murmurhash
+```
+
+## Usage
+
+```php
+<?php
+echo murmurhash3("Hello World");
+// cnd0ue
+```
+
 
 ## License (MIT)
 

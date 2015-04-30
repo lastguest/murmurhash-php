@@ -15,12 +15,12 @@
  * @return number 32-bit (base 32 converted) positive integer hash
  */
 
-function murmurhash3_32_gc($key,$seed=0){
+function murmurhash3($key,$seed=0){
 	$klen = strlen($key);
 	$h1   = $seed;
 	for ($i=0,$bytes=$klen-($remainder=$klen&3) ; $i<$bytes ; ) {
 		$k1 = ((ord($key[$i]) & 0xff))
-			| ((ord($key[++$i]) & 0xff) << 8)  
+			| ((ord($key[++$i]) & 0xff) << 8)
 			| ((ord($key[++$i]) & 0xff) << 16)
 			| ((ord($key[++$i]) & 0xff) << 24);
 		++$i;
