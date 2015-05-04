@@ -1,5 +1,7 @@
 # MurmurHash3
 
+[![Latest Stable Version](https://poser.pugx.org/lastguest/murmurhash/v/stable)](https://packagist.org/packages/lastguest/murmurhash) [![Total Downloads](https://poser.pugx.org/lastguest/murmurhash/downloads)](https://packagist.org/packages/lastguest/murmurhash) [![Latest Unstable Version](https://poser.pugx.org/lastguest/murmurhash/v/unstable)](https://packagist.org/packages/lastguest/murmurhash) [![License](https://poser.pugx.org/lastguest/murmurhash/license)](https://packagist.org/packages/lastguest/murmurhash)
+
 PHP Implementation of MurmurHash3
 
 More information about these algorithms can be found at:
