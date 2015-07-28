@@ -15,7 +15,7 @@
  * @return number 32-bit (base 32 converted) positive integer hash
  */
 
-function murmurhash3($key,$seed=0){
+function murmurhash3_int($key,$seed=0){
 	$klen = strlen($key);
 	$h1   = $seed;
 	for ($i=0,$bytes=$klen-($remainder=$klen&3) ; $i<$bytes ; ) {
@@ -48,5 +48,9 @@ function murmurhash3($key,$seed=0){
 	$h1 ^= $h1 >> 13;
 	$h1  = (((($h1 & 0xffff) * 0xc2b2ae35) + (((($h1 >> 16) * 0xc2b2ae35) & 0xffff) << 16))) & 0xffffffff;
 	$h1 ^= $h1 >> 16;
-	return base_convert($h1,10,32);
+	return $h1;
+}
+
+function murmurhash3($key,$seed=0){
+	return base_convert(murmurhash3_int($key,$seed),10,32);
 }
