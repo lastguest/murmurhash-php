@@ -16,6 +16,7 @@
  */
 
 function murmurhash3_int($key,$seed=0){
+	$key = (string) $key;
 	$klen = strlen($key);
 	$h1   = $seed;
 	for ($i=0,$bytes=$klen-($remainder=$klen&3) ; $i<$bytes ; ) {
