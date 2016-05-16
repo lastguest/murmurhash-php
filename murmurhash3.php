@@ -16,14 +16,14 @@
  */
 
 function murmurhash3_int($key,$seed=0){
-  $key = (string) $key;
-  $klen = strlen($key);
-  $h1   = $seed;
+  $key  = array_values(unpack('C*',(string) $key));
+  $klen = count($key);
+  $h1   = (int)$seed;
   for ($i=0,$bytes=$klen-($remainder=$klen&3) ; $i<$bytes ; ) {
-    $k1 = ((ord($key[$i]) & 0xff))
-      | ((ord($key[++$i]) & 0xff) << 8)
-      | ((ord($key[++$i]) & 0xff) << 16)
-      | ((ord($key[++$i]) & 0xff) << 24);
+    $k1 = $key[$i]
+      | ($key[++$i] << 8)
+      | ($key[++$i] << 16)
+      | ($key[++$i] << 24);
     ++$i;
     $k1  = (((($k1 & 0xffff) * 0xcc9e2d51) + ((((($k1 >= 0 ? $k1 >> 16 : (($k1 & 0x7fffffff) >> 16) | 0x8000)) * 0xcc9e2d51) & 0xffff) << 16))) & 0xffffffff;
     $k1  = $k1 << 15 | ($k1 >= 0 ? $k1 >> 17 : (($k1 & 0x7fffffff) >> 17) | 0x4000);
@@ -35,9 +35,9 @@ function murmurhash3_int($key,$seed=0){
   }
   $k1 = 0;
   switch ($remainder) {
-    case 3: $k1 ^= (ord($key[$i + 2]) & 0xff) << 16;
-    case 2: $k1 ^= (ord($key[$i + 1]) & 0xff) << 8;
-    case 1: $k1 ^= (ord($key[$i]) & 0xff);
+    case 3: $k1 ^= $key[$i + 2] << 16;
+    case 2: $k1 ^= $key[$i + 1] << 8;
+    case 1: $k1 ^= $key[$i];
     $k1  = ((($k1 & 0xffff) * 0xcc9e2d51) + ((((($k1 >= 0 ? $k1 >> 16 : (($k1 & 0x7fffffff) >> 16) | 0x8000)) * 0xcc9e2d51) & 0xffff) << 16)) & 0xffffffff;
     $k1  = $k1 << 15 | ($k1 >= 0 ? $k1 >> 17 : (($k1 & 0x7fffffff) >> 17) | 0x4000);
     $k1  = ((($k1 & 0xffff) * 0x1b873593) + ((((($k1 >= 0 ? $k1 >> 16 : (($k1 & 0x7fffffff) >> 16) | 0x8000)) * 0x1b873593) & 0xffff) << 16)) & 0xffffffff;
