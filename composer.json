@@ -5,7 +5,6 @@
     "keywords":      [ "hash","hashing", "murmur" ],
     "type":          "library",
     "license":       "MIT",
-    "version":       "1.2.0",
     "require": {
         "php": ">=4.3"
     },
