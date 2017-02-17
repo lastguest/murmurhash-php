@@ -53,5 +53,7 @@ function murmurhash3_int($key,$seed=0){
 }
 
 function murmurhash3($key,$seed=0){
-  return base_convert(murmurhash3_int($key,$seed),10,32);
+  $hash = murmurhash3_int($key,$seed);
+
+  return base_convert(sprintf("%u\n", $hash),10,32);
 }
