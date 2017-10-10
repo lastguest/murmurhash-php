@@ -1,13 +1,14 @@
 {
     "name":          "lastguest/murmurhash",
+    "type":          "library",
     "description":   "MurmurHash3 Hash",
     "homepage":      "https://github.com/lastguest/murmurhash-php",
-    "keywords":      [ "hash","hashing", "murmur" ],
-    "type":          "library",
+    "keywords":      [
+        "hash",
+        "hashing",
+        "murmur"
+    ],
     "license":       "MIT",
-    "require": {
-        "php": ">=4.3"
-    },
     "authors": [
         {
             "name":     "Stefano Azzolini",
@@ -15,10 +16,27 @@
             "homepage": "https://github.com/lastguest/murmurhash-php"
         }
     ],
+    "scripts": {
+        "test" : [
+          "vendor/bin/phpstan analyse --ansi -n -c tests/phpstan.neon -l 5 src",
+          "vendor/bin/phpunit --colors=always -c tests/phpunit.xml tests/cases"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "require": {
+        "php": "^7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5",
+        "phpstan/phpstan": "^0.6.3"
+    },
     "minimum-stability": "stable",
     "autoload": {
-        "files": [
-        	"murmurhash3.php"
-        ]
+        "psr-4": {
+            "lastguest\\": "src/lastguest/"
+        }
     }
 }

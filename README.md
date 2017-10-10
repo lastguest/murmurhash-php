@@ -6,12 +6,13 @@ PHP Implementation of MurmurHash3
 
 More information about these algorithms can be found at:
 
-*	[MurmurHash Homepage](http://sites.google.com/site/murmurhash/)
-*	[Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash) 
+* [MurmurHash Homepage](http://sites.google.com/site/murmurhash/)
+* [Wikipedia Entry on MurmurHash](http://en.wikipedia.org/wiki/MurmurHash) 
 
 Porting of the MurmurHash3 JavaScript version created by Gary Court (https://github.com/garycourt/murmurhash-js)
 
 ## Installation
+
 Use [composer](https://getcomposer.org/download/) :
 
 ```bash
@@ -20,19 +21,32 @@ composer require lastguest/murmurhash
 
 ## Usage
 
+You can retrieve an hash via `hash3` static method of class `Murmur`
+
 ```php
 <?php
-echo murmurhash3("Hello World");
+use lastguest\Murmur;
+
+echo Murmur::hash3("Hello World");
 // cnd0ue
 ```
 
+You can pass a precise seed positive integer as second parameter 
 
-## License (MIT)
+```php
+<?php
+use lastguest\Murmur;
 
-Copyright (c) 2011 Stefano Azzolini
+echo Murmur::hash3("Hello World", 1234567);
+// qtq2u
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+If you need the integer hash, use the `hash3_int` method
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+```php
+<?php
+use lastguest\Murmur;
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+echo Murmur::hash3_int("Hello World");
+// 427197390
+```

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+  bootstrap="../vendor/autoload.php"
+  colors="true"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  verbose="true"
+  stopOnFailure="false"
+  processIsolation="false"
+  backupGlobals="false"
+  syntaxCheck="true"
+  columns="max"
+>
+    <testsuites>
+        <testsuite name="Murmur::Hash3 Test Suite">
+            <directory>./tests/cases</directory>
+        </testsuite>
+    </testsuites>
+   <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../src</directory>
+        </whitelist>
+    </filter>
+</phpunit>
