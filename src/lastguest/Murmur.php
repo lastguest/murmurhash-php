@@ -18,8 +18,8 @@ class Murmur {
 
   /**
    * @param  string $key   Text to hash.
-   * @param  number $seed  Positive integer only
-   * @return number 32-bit positive integer hash
+   * @param  integer $seed  Positive integer only
+   * @return integer 32-bit positive integer hash
    */
   public static function hash3_int(string $key, int $seed=0) : int {
     $key  = array_values(unpack('C*', $key));
@@ -61,7 +61,7 @@ class Murmur {
 
   /**
    * @param  string $key   Text to hash.
-   * @param  number $seed  Positive integer only
+   * @param  integer $seed  Positive integer only
    * @return string
    */
   public static function hash3(string $key, int $seed=0) : string {
