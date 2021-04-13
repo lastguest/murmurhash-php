@@ -27,11 +27,11 @@
         "classmap-authoritative": true
     },
     "require": {
-        "php": "^7"
+        "php": "^7||^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5",
-        "phpstan/phpstan": "^0.6.3"
+        "phpunit/phpunit": "^7||^9",
+        "phpstan/phpstan": "^0.12"
     },
     "minimum-stability": "stable",
     "autoload": {
