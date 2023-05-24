@@ -27,7 +27,7 @@
         "classmap-authoritative": true
     },
     "require": {
-        "php": "^7||^8.0"
+        "php": "^7||^8"
     },
     "require-dev": {
         "phpunit/phpunit": "^7||^9",
